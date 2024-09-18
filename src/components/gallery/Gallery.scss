@@ -1,0 +1,22 @@
+@use '../../variables' as variables;
+
+.gallery {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: variables.$spacing-unit;
+    padding-block: variables.$spacing-medium;
+    position: relative;
+    transition: transform variables.$transition-very-slow linear;
+    scroll-behavior: smooth;
+    transform-origin: center;
+}
+
+.click-out-body {
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}

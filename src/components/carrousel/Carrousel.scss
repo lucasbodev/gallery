@@ -1,0 +1,63 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+
+.carrousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-container {
+  position: relative;
+  scroll-behavior: smooth;
+  transition: all variables.$transition-very-fast ease-out;
+  overflow-x: hidden;
+  z-index: 1;
+  width: variables.$first-item-width;
+  padding-left: 0;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+  /* Chrome */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.open {
+    width: 100%;
+    overflow-x: auto;
+    padding-left: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+  }
+
+  @include mixins.tablet {
+    width: variables.$tablet-first-item-width;
+  }
+}
+
+.item-list {
+  display: flex;
+  width: fit-content;
+  gap: variables.$spacing-unit;
+  padding-right: variables.$spacing-unit;
+}
+
+.click-out-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  background-color: transparent;
+
+  &.open {
+    display: block;
+    width: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+  }
+}

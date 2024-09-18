@@ -1,0 +1,88 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+.carrousel-quote {
+    width: variables.$quote-item-width;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    transition: opacity variables.$transition-fast ease-out;
+}
+
+.carrousel-quote-content {
+    display: flex;
+    gap: variables.$spacing-medium;
+    flex-direction: column;
+    justify-content: center;
+    height: variables.$carrousel-height;
+    overflow: hidden;
+
+    &.open {
+        height: calc(variables.$carrousel-height * variables.$scale);
+        
+        @include mixins.tablet {
+            height: variables.$carrousel-height;
+        }
+    }
+    
+    @include mixins.mobile {
+        height: variables.$mobile-carrousel-height;
+    }
+}
+
+.carrousel-quote-text {
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-size: variables.$font-size-large;
+    letter-spacing: 1px;
+    line-height: variables.$line-height-base;
+    text-align: justify;
+
+    &::before {
+        content: url('quote.svg');
+        margin-right: variables.$spacing-small;
+        margin-bottom: 25%;
+    }
+
+    &::after {
+        content: url('quote.svg');
+        transform: rotate(180deg);
+        margin-left: variables.$spacing-small;
+        margin-top: 25%;
+    }
+}
+
+.carrousel-quote-author {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: variables.$neutral;
+    height: fit-content;
+    gap: variables.$spacing-small;
+    border-radius: 3px;
+    &::after {
+        content: '';
+        width: 88px;
+        height: 2px;
+        border-radius: 3px;
+        background-color: variables.$neutral;
+        transform: translateY(1px);
+    }
+}
+
+.carrousel-quote-author-name {
+    text-transform: uppercase;
+    font-size: variables.$font-size-small;
+}
+
+.carrousel-quote-subnail {
+    display: flex;
+    padding-block: variables.$spacing-small;
+    flex-direction: column;
+    justify-content: center;
+    gap: variables.$spacing-tiny;
+    opacity: 0;
+    position: relative;
+    transition: all variables.$transition-fast ease-out;
+}

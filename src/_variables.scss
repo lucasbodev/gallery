@@ -1,0 +1,43 @@
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+$background-color: #ecf0f1;
+
+$neutral-lightest: hsla(0, 0%, 100%, 1);
+$neutral-lighter: hsla(0, 0%, 90%, 1);
+$neutral-light: hsla(0, 0%, 80%, 1);
+$neutral: hsla(0, 0%, 60%, 1);
+$neutral-dark: hsla(0, 0%, 30%, 1);
+$neutral-darker: hsla(0, 0%, 20%, 1);
+$neutral-darkest: hsla(0, 0%, 10%, 1);
+
+// Typography
+$font-family-base: 'Lato', sans-serif;
+$font-size-small: 0.75rem;
+$font-size-base: 1rem;
+$font-size-large: 1.25rem;
+$line-height-base: 1.5rem;
+
+// Spacing
+$spacing-unit: 2rem;
+$spacing-tiny: $spacing-unit * 0.1;  
+$spacing-small: $spacing-unit * 0.5;
+$spacing-medium: $spacing-unit * 2;
+$spacing-large: $spacing-unit * 3;
+
+// Transitions durations
+$transition-very-slow: 1.5s;
+$transition-slow: 0.8s;
+$transition-normal: 0.6s;
+$transition-fast: 0.4s;
+$transition-very-fast: 0.2s;
+
+// Settings
+$first-item-width: 32rem;
+$tablet-first-item-width: calc(100vw - ($spacing-unit * 2));
+$carrousel-height: 20rem;
+$mobile-carrousel-height: 12rem;
+$text-item-width: 20ch;
+$quote-item-width: 60ch;
+$scale: 1.4;

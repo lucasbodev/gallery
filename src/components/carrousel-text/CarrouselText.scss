@@ -1,0 +1,42 @@
+@use '../../mixins' as mixins;
+@use '../../variables' as variables;
+
+.carrousel-text {
+    width: variables.$text-item-width;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    transition: opacity variables.$transition-fast ease-out;
+}
+
+.carrousel-text-content {
+    font-size: variables.$font-size-small;
+    line-height: variables.$line-height-base;
+    height: variables.$carrousel-height;
+    text-align: justify;
+    overflow: hidden;
+    color: variables.$neutral;
+
+    &.open {
+        height: calc(variables.$carrousel-height * variables.$scale);
+        
+        @include mixins.tablet {
+            height: variables.$carrousel-height;
+        }
+    }
+    
+    @include mixins.mobile {
+        height: variables.$mobile-carrousel-height;
+    }
+}
+
+.carrousel-text-subnail {
+    display: flex;
+    padding-block: variables.$spacing-small;
+    flex-direction: column;
+    justify-content: center;
+    gap: variables.$spacing-tiny;
+    opacity: 0;
+    position: relative;
+    transition: all variables.$transition-fast ease-out;
+}

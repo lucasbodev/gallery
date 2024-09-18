@@ -1,0 +1,19 @@
+@use './variables' as variables;
+
+
+:root {
+  --firstitemwidth: variables.$first-item-width;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: variables.$font-family-base;
+  color: variables.$neutral-darkest;
+  padding-bottom: 12rem;
+  // position: relative;
+}
