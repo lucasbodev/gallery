@@ -22,9 +22,9 @@
             height: calc(variables.$carrousel-height * variables.$scale);
 
             @include mixins.tablet {
-                // object-fit: contain;
-                // width: min-content;
-                width: variables.$tablet-first-item-width;
+                object-fit: contain;
+                width: min-content;
+                // width: variables.$tablet-first-item-width;
                 height: variables.$carrousel-height;
             }
         }

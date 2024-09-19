@@ -5,7 +5,7 @@ import './CarrouselCard.css'
 import { forwardRef } from 'react';
 import { useEffect, useState } from 'react';
 
-const CarrouselCard = forwardRef(({ carrouselOpen, onOpen, img }, ref) => {
+const CarrouselCard = forwardRef(({ carrouselOpen, onOpen, img, title, subtitle }, ref) => {
 
     const image = useRef(null);
     const subnail = useRef(null);
@@ -38,12 +38,12 @@ const CarrouselCard = forwardRef(({ carrouselOpen, onOpen, img }, ref) => {
 
     return (
         <div className="carrousel-card" ref={ref} onClick={onOpen}>
-            <img className='carrousel-card-image' ref={image} src={img} />
+            <img className='carrousel-card-image' ref={image} src={img.rendered} />
             {
                 open &&
                 <div className="carrousel-card-subnail" ref={subnail}>
-                    <span className='carrousel-card-title'>Musée d’art contemporain</span>
-                    <span className='carrousel-card-subtitle'>Bruxelles, Belgique</span>
+                    <span className='carrousel-card-title'>{title && title.rendered}</span>
+                    <span className='carrousel-card-subtitle'>{subtitle}</span>
                 </div>
             }
         </div>

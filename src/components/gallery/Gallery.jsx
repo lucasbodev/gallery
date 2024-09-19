@@ -3,7 +3,7 @@ import './Gallery.css'
 import Carrousel from '../carrousel/Carrousel';
 import { useRef, useState } from 'react';
 
-const Gallery = () => {
+const Gallery = ({ carrousels }) => {
 
     const gallery = useRef(null);
     const clickOut = useRef(null);
@@ -36,14 +36,25 @@ const Gallery = () => {
 
     return (
         <div className='gallery' ref={gallery}>
-            {Array.from({ length: 6 }).map((_, index) => (
+            {carrousels.map((carrousel) => (
+                <Carrousel
+                    key={carrousel.id}
+                    title={carrousel.title}
+                    subtitle={carrousel.subtitle}
+                    images={carrousel.images}
+                    galleryOpen={open}
+                    onOpenGallery={onOpen}
+                    onCloseGallery={onClose}
+                />
+            ))}
+            {/* {Array.from({ length: 6 }).map((_, index) => (
                 <Carrousel
                     key={index}
                     galleryOpen={open}
                     onOpenGallery={onOpen}
                     onCloseGallery={onClose}
                 />
-            ))}
+            ))} */}
             <div className="click-out-body" ref={clickOut} onClick={onClose}></div>
         </div>
     );

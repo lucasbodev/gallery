@@ -30,6 +30,11 @@
   padding-left: calc((100vw - 44.8rem) / 2);
 }
 @media (max-width: 768px) {
+  .scroll-container.open {
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 768px) {
   .scroll-container {
     width: calc(100vw - 4rem);
   }
@@ -55,4 +60,9 @@
 .click-out-item.open {
   display: block;
   width: calc((100vw - 44.8rem) / 2);
+}
+@media (max-width: 768px) {
+  .click-out-item.open {
+    width: 1rem;
+  }
 }/*# sourceMappingURL=Carrousel.css.map */

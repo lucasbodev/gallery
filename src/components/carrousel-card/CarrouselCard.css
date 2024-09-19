@@ -23,7 +23,10 @@
 }
 @media (max-width: 768px) {
   .carrousel-card:first-child .carrousel-card-image.open {
-    width: calc(100vw - 4rem);
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: -moz-min-content;
+    width: min-content;
     height: 20rem;
   }
 }

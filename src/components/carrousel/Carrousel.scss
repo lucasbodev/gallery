@@ -33,6 +33,10 @@
     width: 100%;
     overflow-x: auto;
     padding-left: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+
+    @include mixins.tablet {
+      padding-left: variables.$spacing-small;
+    }
   }
 
   @include mixins.tablet {
@@ -59,5 +63,9 @@
   &.open {
     display: block;
     width: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+
+    @include mixins.tablet {
+      width: variables.$spacing-small;
+    }
   }
 }

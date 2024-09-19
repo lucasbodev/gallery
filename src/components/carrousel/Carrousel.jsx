@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import './Carrousel.css';
 import { useRef } from 'react';
 import CarrouselCard from '../carrousel-card/CarrouselCard';
-import CarrouselQuote from '../carrousel-quote/CarrouselQuote';
-import CarrouselText from '../carrousel-text/CarrouselText';
+// import CarrouselQuote from '../carrousel-quote/CarrouselQuote';
+// import CarrouselText from '../carrousel-text/CarrouselText';
 
-const Carrousel = ({ galleryOpen, onOpenGallery, onCloseGallery }) => {
+const Carrousel = ({ galleryOpen, onOpenGallery, onCloseGallery, title, subtitle, images }) => {
 
   const scrollContainer = useRef(null);
   const scrollItems = useRef([]);
@@ -126,7 +126,12 @@ const Carrousel = ({ galleryOpen, onOpenGallery, onCloseGallery }) => {
       <div className="click-out-item" ref={clickOutItem} onClick={onCloseGallery} onWheel={() => {}}></div>
       <div className="scroll-container" ref={scrollContainer}>
         <div className="item-list" onClick={onClose}>
-          <CarrouselCard ref={(el) => setItemRef(el, 0)} carrouselOpen={open} img={"image1.png"} onOpen={onOpen}/>
+          {images.map((image, index) => (
+            index === 0 ? <CarrouselCard ref={(el) => setItemRef(el, index)} key={index} carrouselOpen={open} img={image} onOpen={onOpen} title={title} subtitle={subtitle}/> : 
+            <CarrouselCard ref={(el) => setItemRef(el, index)} key={index} carrouselOpen={open} img={image}/>
+          ))}
+
+          {/* <CarrouselCard ref={(el) => setItemRef(el, 0)} carrouselOpen={open} img={"image1.png"} onOpen={onOpen}/>
           <CarrouselText ref={(el) => setItemRef(el, 1)} carrouselOpen={open} text={
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus arcu eu facilisis egestas. Nulla at quam a massa viverra mollis faucibus ut nisl. Pellentesque hendrerit aliquet varius. Pellentesque et augue eros. Nam a urna iaculis, condimentum arcu sit amet, pharetra mi. Praesent maximus pellentesque magna, et vestibulum ante bibendum ac. Aliquam aliquam elit tellus. Pellentesque luctus ultricies ligula, ac dictum diam vehicula ut. Nunc vel diam tempor massa mattis euismod at ac arcu."
           } />
@@ -136,7 +141,7 @@ const Carrousel = ({ galleryOpen, onOpenGallery, onCloseGallery }) => {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rhoncus arcu eu facilisis egestas. Nulla at quam a massa viverra mollis faucibus ut nisl. "
           } />
           <CarrouselCard ref={(el) => setItemRef(el, 5)} carrouselOpen={open} img={"image4.png"}/>
-          <CarrouselCard ref={(el) => setItemRef(el, 6)} carrouselOpen={open} img={"image5.png"}/>
+          <CarrouselCard ref={(el) => setItemRef(el, 6)} carrouselOpen={open} img={"image5.png"}/> */}
         </div>
       </div>
     </div>
