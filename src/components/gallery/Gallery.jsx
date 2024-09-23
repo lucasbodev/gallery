@@ -47,14 +47,6 @@ const Gallery = ({ carrousels }) => {
                     onCloseGallery={onClose}
                 />
             ))}
-            {/* {Array.from({ length: 6 }).map((_, index) => (
-                <Carrousel
-                    key={index}
-                    galleryOpen={open}
-                    onOpenGallery={onOpen}
-                    onCloseGallery={onClose}
-                />
-            ))} */}
             <div className="click-out-body" ref={clickOut} onClick={onClose}></div>
         </div>
     );

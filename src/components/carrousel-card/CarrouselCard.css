@@ -30,9 +30,19 @@
     height: 20rem;
   }
 }
+@media (max-width: 470px) {
+  .carrousel-card:first-child .carrousel-card-image.open {
+    height: 12rem;
+  }
+}
 @media (max-width: 768px) {
   .carrousel-card:first-child .carrousel-card-image {
     width: calc(100vw - 4rem);
+  }
+}
+@media (max-width: 470px) {
+  .carrousel-card:first-child .carrousel-card-image {
+    height: 12rem;
   }
 }
 
@@ -46,6 +56,11 @@
 @media (max-width: 768px) {
   .carrousel-card-image.open {
     height: 20rem;
+  }
+}
+@media (max-width: 470px) {
+  .carrousel-card-image.open {
+    height: 12rem;
   }
 }
 @media (max-width: 470px) {

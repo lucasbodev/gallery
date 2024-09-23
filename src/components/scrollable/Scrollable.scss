@@ -1,0 +1,34 @@
+.scroll-container {
+    position: relative;
+    scroll-behavior: smooth;
+    transition: all variables.$transition-very-fast ease-out;
+    overflow-x: hidden;
+    z-index: 1;
+    width: variables.$first-item-width;
+    padding-left: 0;
+
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* Chrome */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.open {
+        width: 100%;
+        overflow-x: auto;
+        padding-left: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+
+        @include mixins.tablet {
+            padding-left: variables.$spacing-small;
+        }
+    }
+
+    @include mixins.tablet {
+        width: variables.$tablet-first-item-width;
+    }
+}

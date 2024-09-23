@@ -24,14 +24,22 @@
             @include mixins.tablet {
                 object-fit: contain;
                 width: min-content;
-                // width: variables.$tablet-first-item-width;
                 height: variables.$carrousel-height;
+            }
+
+            @include mixins.mobile {
+                height: variables.$mobile-carrousel-height;
             }
         }
 
         @include mixins.tablet {
             width: variables.$tablet-first-item-width;
         }    
+
+        @include mixins.mobile {
+            // width: calc(100vw - variables.$spacing-unit * 2);
+            height: variables.$mobile-carrousel-height;
+        }
     }
 }
 
@@ -44,6 +52,10 @@
 
         @include mixins.tablet {
             height: variables.$carrousel-height;
+        }
+
+        @include mixins.mobile {
+            height: variables.$mobile-carrousel-height;
         }
     }
 

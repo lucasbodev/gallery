@@ -15,7 +15,6 @@ body {
   font-family: variables.$font-family-base;
   color: variables.$neutral-darkest;
   padding-bottom: 12rem;
-  // position: relative;
 }
 
 .loading-wrapper {
@@ -27,6 +26,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
   z-index: 1000;
 }

@@ -1,0 +1,68 @@
+@use '../../variables' as variables;
+@use '../../mixins' as mixins;
+
+.draggable-container {
+    position: relative;
+    // scroll-behavior: smooth;
+    transition: all variables.$transition-very-fast ease-out;
+    overflow-x: hidden;
+    z-index: 1;
+    width: variables.$first-item-width;
+    padding-left: 0;
+    display: flex;
+    gap: variables.$spacing-unit;
+    cursor: grab;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* Chrome */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.open {
+        width: 100%;
+        overflow-x: auto;
+        padding-left: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+        padding-right: variables.$spacing-unit;
+
+        @include mixins.tablet {
+            padding-left: variables.$spacing-small;
+        }
+    }
+
+    &.closed {
+        cursor: pointer;
+    }
+
+    &.dragging {
+        cursor: grabbing;
+    }
+
+    @include mixins.tablet {
+        width: variables.$tablet-first-item-width;
+    }
+}
+
+.click-out-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    display: none;
+    background-color: transparent;
+    cursor: auto;
+
+    &.open {
+        display: block;
+        width: calc((100vw - (variables.$first-item-width * variables.$scale)) / 2);
+
+        @include mixins.tablet {
+            width: variables.$spacing-small;
+        }
+    }
+}

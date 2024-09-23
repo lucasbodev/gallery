@@ -1,0 +1,61 @@
+.draggable-container {
+  position: relative;
+  transition: all 0.2s ease-out;
+  overflow-x: hidden;
+  z-index: 1;
+  width: 32rem;
+  padding-left: 0;
+  display: flex;
+  gap: 2rem;
+  cursor: grab;
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+  /* Chrome */
+}
+.draggable-container::-webkit-scrollbar {
+  display: none;
+}
+.draggable-container.open {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: calc((100vw - 44.8rem) / 2);
+  padding-right: 2rem;
+}
+@media (max-width: 768px) {
+  .draggable-container.open {
+    padding-left: 1rem;
+  }
+}
+.draggable-container.closed {
+  cursor: pointer;
+}
+.draggable-container.dragging {
+  cursor: grabbing;
+}
+@media (max-width: 768px) {
+  .draggable-container {
+    width: calc(100vw - 4rem);
+  }
+}
+
+.click-out-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 2;
+  display: none;
+  background-color: transparent;
+  cursor: auto;
+}
+.click-out-item.open {
+  display: block;
+  width: calc((100vw - 44.8rem) / 2);
+}
+@media (max-width: 768px) {
+  .click-out-item.open {
+    width: 1rem;
+  }
+}/*# sourceMappingURL=Draggable.css.map */
