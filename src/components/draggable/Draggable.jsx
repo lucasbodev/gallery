@@ -100,6 +100,7 @@ const Draggable = forwardRef(({ children, draggable }, ref) => {
                 onMouseUp={onMouseUp}
                 onMouseMove={onMouseMove}
                 onTouchStart={onMouseDown}
+                onTouchEnd={onMouseUp}
             >
                 {children}
             </div> :
