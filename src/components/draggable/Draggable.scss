@@ -11,7 +11,8 @@
     padding-left: 0;
     display: flex;
     gap: variables.$spacing-unit;
-    cursor: grab;
+    // cursor: grab;
+    cursor: url('swipe.svg'), auto;
 
     /* IE and Edge */
     -ms-overflow-style: none;
@@ -39,7 +40,7 @@
     }
 
     &.dragging {
-        cursor: grabbing;
+        // cursor: grabbing;
     }
 
     @include mixins.tablet {

@@ -10,8 +10,7 @@ const Draggable = forwardRef(({ children, draggable }, ref) => {
     const isDragging = useRef(false);
     const startX = useRef(0);
     const scrollLeft = useRef(0);
-    // const clickOutItem = useRef(null);
-    const [centeredElement, setCenteredElement] = useState(null); // Track the centered element
+    const [centeredElement, setCenteredElement] = useState(null);
 
     useEffect(() => {
         ref.current.addEventListener('touchmove', onMouseMove, { passive: false });
@@ -93,39 +92,18 @@ const Draggable = forwardRef(({ children, draggable }, ref) => {
 
     const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
 
-    // const manageClickIn = () => {
-    //     console.log("click in");
-    //     clickOutItem.current.classList.add("open");
-    //     ref.current.classList.add("open");
-    //     // onClickIn();
-    // }
-
-    // const manageClickOut = () => {
-    //     console.log("click out");
-    //     clickOutItem.current.classList.remove("open");
-    //     ref.current.classList.remove("open");
-    //     onClickOut();
-    // }
-
     return (
         draggable ?
-            <div
-                ref={ref}
+            <div ref={ref}
                 className="draggable-container"
                 onMouseDown={onMouseDown}
                 onMouseUp={onMouseUp}
                 onMouseMove={onMouseMove}
                 onTouchStart={onMouseDown}
-                onTouchEnd={onMouseUp}
-            // onClick={manageClickIn}
             >
-                {/* <div className="click-out-item" ref={clickOutItem} onClick={manageClickOut}></div> */}
                 {children}
             </div> :
-            <div
-                ref={ref}
-                className="draggable-container closed"
-            >
+            <div ref={ref} className="draggable-container closed">
                 {children}
             </div>
     );

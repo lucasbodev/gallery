@@ -49,6 +49,7 @@
 .carrousel-card-image {
   height: 20rem;
   transition: all 0.2s ease-out;
+  filter: brightness(0.8);
 }
 .carrousel-card-image.open {
   height: 28rem;

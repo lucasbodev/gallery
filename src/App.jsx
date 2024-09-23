@@ -55,7 +55,7 @@ const App = () => {
 
   const getCarrouselSubtitle = async (id) => {
     try {
-      const response = await fetch(`http://localhost/api/getProjectAddress.php?id=${id}`);
+      const response = await fetch(`http://localhost/gallery/api/getProjectAddress.php?id=${id}`);
       const data = await response.json();
       return data || null;
     } catch (error) {

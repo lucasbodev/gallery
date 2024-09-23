@@ -37,7 +37,6 @@
         }    
 
         @include mixins.mobile {
-            // width: calc(100vw - variables.$spacing-unit * 2);
             height: variables.$mobile-carrousel-height;
         }
     }
@@ -46,6 +45,7 @@
 .carrousel-card-image {
     height: variables.$carrousel-height;
     transition: all variables.$transition-very-fast ease-out;
+    filter: brightness(0.8);
 
     &.open {
         height: calc(variables.$carrousel-height * variables.$scale);
