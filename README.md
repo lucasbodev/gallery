@@ -16,3 +16,6 @@ Pour que le composant récupère les données WordPress, il faut placer le dossi
 - Sur macOS, le chemin par défaut est généralement : /Applications/MAMP/htdocs/
 - Sur Windows, le chemin par défaut est : C:\MAMP\htdocs\
 
+## Exécution
+
+Pour exécuter en local : ```pnpm run dev```
